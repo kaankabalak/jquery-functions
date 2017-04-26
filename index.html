@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+		$('document').ready(function() {
+			$('.click').click(function() {
+				alert("You have clicked the button!");
+			});
+			$('.hide').click(function() {
+				$('.hide').hide(function() {
+				});
+			});
+			$('.show').click(function() {
+				$('.message-show').show('slow');
+			});
+			$('.toggle').click(function() {
+				$('#toggle').toggle('slow');
+			});
+			$('.slidedown').click(function() {
+				$('.message-down').slideDown('slow');
+			});
+			$('.slideup').click(function() {			
+				$('.message-up').slideUp('slow');
+			});
+			$('.slidetoggle').click(function() {			
+				$('.message-toggle').slideToggle('slow');
+			});
+			$('.fadein').click(function() {			
+				$('.message-fade').fadeIn('slow');
+			});
+			$('.fadeout').click(function() {			
+				$('.message-fadeout').fadeOut('slow');
+			});
+			$('.addclass').click(function() {			
+				$('#message-add').addClass('italic');
+			});
+			$('.before').click(function() {			
+				$('#message-before').before('<p>Test</p>');
+			});
+			$('.after').click(function() {			
+				$('#message-after').after('<p>Test</p>');
+			});
+			$('.append').click(function() {			
+				$('#message-append').append('<p>Test</p>');
+			});
+			$('.html').click(function() {
+				var htmlString = $('#message-html').html();	
+				$('#message-html').text(htmlString);
+			});
+			$('.attr').click(function() {
+				var playerClub = $('#player').attr('club');	
+				$('#club').text(playerClub);
+			});
+			$('.val').click(function() {
+				var textField = $('#text-val').val();	
+				$('#input-val').text(textField);
+			});
+			$('.text').click(function() {
+				var ingredients = $('#sandwich').text();	
+				$('#sandwich-text').text(ingredients);
+			});
+			$('.data').click(function() {	
+				$('#data-field').data("foo", 'pizza!');
+				alert($('#data-field').data('foo'));
+			});
+		});
+	</script>
+
+	<title>My jQuery basic assignment</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div class="element">
+			<h1>Click</h1>
+			<div class="button click">Click</div>
+			<p>Click the button to pop up an alert!</p>
+		</div>
+		<div class="element">
+			<h1>Hide</h1>
+			<div class="button hide">Hide</div>
+			<p>Click the button to hide it!</p>
+		</div>
+		<div class="element">
+			<h1>Show</h1>
+			<div class="button show">Show</div>
+			<p>Click the button to display the hidden text!</p>
+			<p class="hidden message-show" style="display: none">Hello!</p>
+		</div>
+		<div class="element">
+			<h1>Toggle</h1>
+			<div class="button toggle">Toggle</div>
+			<p>Click the button to toggle the text!</p>
+			<p id="toggle">Toggle this!</p>
+		</div>
+		<div class="element">
+			<h1>Slide Down</h1>
+			<div class="button slidedown">Slide Down</div>
+			<p>Click the button to slide down a hidden text!</p>
+			<p class="hidden message-down" style="display: none">This is the hidden message!</p>
+		</div>
+		<div class="element">
+			<h1>Slide Up</h1>
+			<div class="button slideup">Slide Up</div>
+			<p>Click the button to hide the text!</p>
+			<p class="message-up">Hide this!</p>
+		</div>
+		<div class="element">
+			<h1>Slide Toggle</h1>
+			<div class="button slidetoggle">Slide Toggle</div>
+			<p>Click the button to toggle the text!</p>
+			<p class="message-toggle">Toggle this!</p>
+		</div>
+		<div class="element">
+			<h1>Fade In</h1>
+			<div class="button fadein">Fade In</div>
+			<p>Click the button to display the text!</p>
+			<p class="hidden message-fade" style="display: none">Hello!</p>
+		</div>
+		<div class="element">
+			<h1>Fade Out</h1>
+			<div class="button fadeout">Fade Out</div>
+			<p>Click the button to hide the text!</p>
+			<p class="message-fadeout">Hide this!</p>
+		</div>
+		<div class="element">
+			<h1>Add Class</h1>
+			<div class="button addclass">Add Class</div>
+			<p id="message-add">Click the button to make this text italic!</p>
+		</div>
+		<div class="element">
+			<h1>Before</h1>
+			<div class="button before">Before</div>
+			<p id="message-before">Click the button to add some text before the element!</p>
+		</div>
+		<div class="element">
+			<h1>After</h1>
+			<div class="button after">After</div>
+			<p id="message-after">Click the button to add some text after the element!</p>
+		</div>
+		<div class="element">
+			<h1>Append</h1>
+			<div class="button append">Append</div>
+			<p id="message-append">Click the button to add some text after the element!</p>
+		</div>
+		<div class="element get-html">
+			<h1>HTML</h1>
+			<div class="button html">HTML</div>
+			<div id="message-html">
+				<p style="color: blue"><b>Click</b> the button to reveal the HTML of this message!</p>
+			</div>
+		</div>
+		<div class="element">
+			<h1>Attr</h1>
+			<div class="button attr">Attr</div>
+			<p id="message-attr">Click the button to see the attributes of the bold text!</p>
+			<p id="player" club='Man City'><b>Sergio Aguero</b></p>
+			<p>The club this player plays for is:</p><div id="club"></div>
+		</div>
+		<div class="element">
+			<h1>Val</h1>
+			<div class="button val">Set Val</div>
+			<p id="message-val">Write your message in the text field and click the button to change the text below!</p>
+			<input type="text" id='text-val' value='search'>
+			<p id="input-val"></p>
+		</div>
+		<div class="element">
+			<h1>Text</h1>
+			<div class="button text">Text</div>
+			<p id="message-text">Click the button to display the text content of the list!</p>	
+			<div id="sandwich">
+				<h3>My favorite sandwich:</h3>
+					<ul>
+						<li>Bacon</li>
+						<li>Ham</li>
+						<li>Turkey</li>
+						<li>Cheese</li>
+						<li>Lettuce</li>
+						<li>Tomatoes</li>
+						<li>Pickles</li>
+						<li>Bread roll</li>
+					</ul>
+			</div>
+			<div id="sandwich-text"></div>
+		</div>
+		<div class="element">
+			<h1>Data</h1>
+			<div class="button data">Data</div>
+			<p id="message-data">Click the button to store data and display it later!</p>
+			<div id="data-field"></div>
+		</div>
+	</div>
+</body>
+</html>
